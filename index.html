@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="calculator">
+      <div class="header">
+        <h2>Calculator</h2>
+        <button onclick="toggleMenu()">⋮</button>
+
+        <div id="menu" class="hidden">
+          <button onclick="showMode('basic')">Basic Calculator</button>
+          <button onclick="showMode('scientific')">Scientific Mode</button>
+          <button onclick="showMode('units')">Unit Conversion</button>
+          <button onclick="showMode('currency')">Currency Conversion</button>
+        </div>
+      </div>
+
+      <div id="basic">
+        <input id="display" value="0" readonly />
+
+        <div class="buttons">
+          <button onclick="clearDisplay()">AC</button>
+          <button onclick="deleteLast()">DEL</button>
+          <button onclick="press('%')">%</button>
+          <button onclick="press('/')">÷</button>
+
+          <button onclick="press('7')">7</button>
+          <button onclick="press('8')">8</button>
+          <button onclick="press('9')">9</button>
+          <button onclick="press('*')">×</button>
+
+          <button onclick="press('4')">4</button>
+          <button onclick="press('5')">5</button>
+          <button onclick="press('6')">6</button>
+          <button onclick="press('-')">−</button>
+
+          <button onclick="press('1')">1</button>
+          <button onclick="press('2')">2</button>
+          <button onclick="press('3')">3</button>
+          <button onclick="press('+')">+</button>
+
+          <button onclick="press('(')">(</button>
+          <button onclick="press('0')">0</button>
+          <button onclick="press('.')">.</button>
+          <button onclick="calculate()">=</button>
+        </div>
+      </div>
+
+      <div id="scientific" class="hidden">
+        <h3>Scientific Calculator</h3>
+        <input type="number" id="number" value="9" />
+
+        <button onclick="scientific('sqrt')">Square Root</button>
+        <button onclick="scientific('square')">Square</button>
+        <button onclick="scientific('cube')">Power of 3</button>
+        <button onclick="scientific('sin')">Sin</button>
+        <button onclick="scientific('cos')">Cos</button>
+        <button onclick="scientific('tan')">Tan</button>
+        <button onclick="scientific('log')">Log</button>
+        <p id="sciResult">Result:</p>
+      </div>
+
+      <div id="units" class="hidden">
+        <h3>Unit Conversion</h3>
+        <input type="number" id="unitValue" value="1" />
+
+        <select id="unitFrom">
+          <option value="km">Kilometers</option>
+          <option value="m">Meters</option>
+          <option value="kg">Kilograms</option>
+          <option value="g">Grams</option>
+          <option value="C">Celsius</option>
+          <option value="F">Fahrenheit</option>
+        </select>
+
+        <select id="unitTo">
+          <option value="m">Meters</option>
+          <option value="km">Kilometers</option>
+          <option value="g">Grams</option>
+          <option value="kg">Kilograms</option>
+          <option value="F">Fahrenheit</option>
+          <option value="C">Celsius</option>
+        </select>
+
+        <button onclick="convertUnit()">Convert</button>
+        <p id="unitResult">Result:</p>
+      </div>
+
+      <div id="currency" class="hidden">
+        <h3>Currency Conversion</h3>
+        <input type="number" id="amount" value="1000" />
+
+        <select id="fromCurrency">
+          <option value="PKR">PKR</option>
+          <option value="USD">USD</option>
+          <option value="EUR">EUR</option>
+        </select>
+
+        <select id="toCurrency">
+          <option value="USD">USD</option>
+          <option value="PKR">PKR</option>
+          <option value="EUR">EUR</option>
+        </select>
+
+        <button onclick="convertCurrency()">Convert</button>
+        <p id="currencyResult">Result:</p>
+        <small>Uses sample exchange rates.</small>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

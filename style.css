@@ -1,0 +1,107 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background: #ffe6f0;
+    display: flex;
+    justify-content: center;
+    padding: 40px 10px;
+}
+
+.calculator {
+    background: #fff7fa;
+    padding: 20px;
+    width: 320px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px #e8a6c0;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.header h2 {
+    color: #c2185b;
+}
+
+#menu {
+    position: absolute;
+    top: 45px;
+    right: 0;
+    background: #fff0f6;
+    box-shadow: 0 3px 10px #e8a6c0;
+    padding: 8px;
+    z-index: 1;
+}
+
+#menu button {
+    display: block;
+    width: 100%;
+}
+
+.hidden {
+    display: none !important;
+}
+
+#display {
+    width: 95%;
+    height: 55px;
+    font-size: 25px;
+    text-align: right;
+    margin-bottom: 10px;
+    background: #ffe6f0;
+    border: none;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+}
+
+button, select, input {
+    padding: 10px;
+    margin-bottom: 7px;
+    border-radius: 6px;
+}
+
+button {
+    border: none;
+    background: #ffc1d9;
+    color: #7a1640;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #f48fb1;
+}
+
+.buttons button {
+    height: 48px;
+    font-size: 17px;
+}
+
+#scientific button,
+#units button,
+#currency button {
+    width: 100%;
+}
+
+#scientific input,
+#units input,
+#currency input,
+#units select,
+#currency select {
+    width: 90%;
+}
+
+#units select,
+#currency select {
+    margin-top: 5px;
+}
+
+h3, p {
+    color: #ad1457;
+}
